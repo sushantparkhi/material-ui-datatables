@@ -3,18 +3,20 @@ import {shallow, mount} from 'enzyme';
 import {expect} from 'chai';
 import sinon from 'sinon';
 
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import {TableHeader} from 'material-ui/Table';
-import {Toolbar, ToolbarTitle} from 'material-ui/Toolbar';
-import DropDownMenu from 'material-ui/DropDownMenu';
-import Menu from 'material-ui/Menu';
-import MenuItem from 'material-ui/MenuItem';
-import FlatButton from 'material-ui/FlatButton';
-import IconButton from 'material-ui/IconButton';
-import TextField from 'material-ui/TextField';
-import PersonAdd from 'material-ui/svg-icons/social/person-add';
-import InfoOutline from 'material-ui/svg-icons/action/info-outline';
-import {deepOrange500} from 'material-ui/styles/colors';
+import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
+import {TableHeader} from 'material-ui/lib/Table';
+import {Toolbar, ToolbarTitle} from 'material-ui/lib/Toolbar';
+import DropDownMenu from 'material-ui/lib/DropDownMenu';
+import Menu from 'material-ui/lib/menus/menu';
+import MenuItem from 'material-ui/lib/menus/menu-item';
+
+import FlatButton from 'material-ui/lib/flat-button';
+import IconButton from 'material-ui/lib/icon-button';
+
+import TextField from 'material-ui/lib/TextField';
+import PersonAdd from 'material-ui/lib/svg-icons/social/person-add';
+import InfoOutline from 'material-ui/lib/svg-icons/action/info-outline';
+import {deepOrange500} from 'material-ui/lib/styles/colors';
 
 import {TABLE_COLUMNS, TABLE_COLUMNS_TOOLTIP, TABLE_COLUMNS_SORT_STYLE, TABLE_COLUMNS_CLASSNAME, TABLE_DATA, styles} from './tableSettings';
 import DataTables from '../../src/DataTables/DataTables';
@@ -52,14 +54,14 @@ describe('<DataTables />', function() {
     it('should render header columns', function() {
       const headerColumns = wrapper.find(DataTablesHeaderColumn);
       expect(headerColumns).to.have.length(8);
-      expect(headerColumns.getNodes()[0].props.children.props.children).to.equal('Dessert (100g serving)');
-      expect(headerColumns.getNodes()[1].props.children.props.children).to.equal('Calories');
-      expect(headerColumns.getNodes()[2].props.children.props.children).to.equal('Fat (g)');
-      expect(headerColumns.getNodes()[3].props.children.props.children).to.equal('Carbs (g)');
-      expect(headerColumns.getNodes()[4].props.children.props.children).to.equal('Protein (g)');
-      expect(headerColumns.getNodes()[5].props.children.props.children).to.equal('Sodium (mg)');
-      expect(headerColumns.getNodes()[6].props.children.props.children).to.equal('Calcium (%)');
-      expect(headerColumns.getNodes()[7].props.children.props.children).to.equal('Iron (%)');
+      expect(headerColumns.get(0).props.children.props.children).to.equal('Dessert (100g serving)');
+      expect(headerColumns.get(1).props.children.props.children).to.equal('Calories');
+      expect(headerColumns.get(2).props.children.props.children).to.equal('Fat (g)');
+      expect(headerColumns.get(3).props.children.props.children).to.equal('Carbs (g)');
+      expect(headerColumns.get(4).props.children.props.children).to.equal('Protein (g)');
+      expect(headerColumns.get(5).props.children.props.children).to.equal('Sodium (mg)');
+      expect(headerColumns.get(6).props.children.props.children).to.equal('Calcium (%)');
+      expect(headerColumns.get(7).props.children.props.children).to.equal('Iron (%)');
     });
     it('should render 10 data rows by default', function() {
       const dataRows = wrapper.find(DataTablesRow);
@@ -67,17 +69,17 @@ describe('<DataTables />', function() {
     });
     it('should render data columns', function() {
       const dataRows = wrapper.find(DataTablesRow);
-      expect(dataRows.getNodes()[3].props.children[0].props.children).to.equal('Cupcake');
-      expect(dataRows.getNodes()[3].props.children[1].props.children).to.equal('159');
-      expect(dataRows.getNodes()[3].props.children[2].props.children).to.equal('6.0');
-      expect(dataRows.getNodes()[3].props.children[3].props.children).to.equal('24');
-      expect(dataRows.getNodes()[3].props.children[4].props.children).to.equal('4.0');
-      expect(dataRows.getNodes()[3].props.children[5].props.children).to.equal('87');
-      expect(dataRows.getNodes()[3].props.children[6].props.children).to.equal('14%');
-      expect(dataRows.getNodes()[3].props.children[7].props.children).to.equal('1%');
+      expect(dataRows.get(3).props.children[0].props.children).to.equal('Cupcake');
+      expect(dataRows.get(3).props.children[1].props.children).to.equal('159');
+      expect(dataRows.get(3).props.children[2].props.children).to.equal('6.0');
+      expect(dataRows.get(3).props.children[3].props.children).to.equal('24');
+      expect(dataRows.get(3).props.children[4].props.children).to.equal('4.0');
+      expect(dataRows.get(3).props.children[5].props.children).to.equal('87');
+      expect(dataRows.get(3).props.children[6].props.children).to.equal('14%');
+      expect(dataRows.get(3).props.children[7].props.children).to.equal('1%');
     });
     it('should render row size label', function() {
-      const rowSizeLabelWrapper = wrapper.find({style: styles.footerToolbarItem}).getNodes()[0];
+      const rowSizeLabelWrapper = wrapper.find({style: styles.footerToolbarItem}).get(0);
       expect(rowSizeLabelWrapper.props.children.props.children).to.equal('Rows per page:');
     });
     it('should render row size menu', function() {
@@ -86,13 +88,13 @@ describe('<DataTables />', function() {
     it('should render 10, 30, 50, 100 row size items by default', function() {
       const rowSizeItems = wrapper.find(MenuItem);
       expect(rowSizeItems).to.have.length(4);
-      expect(rowSizeItems.getNodes()[0].props.value).to.equal(10);
-      expect(rowSizeItems.getNodes()[1].props.value).to.equal(30);
-      expect(rowSizeItems.getNodes()[2].props.value).to.equal(50);
-      expect(rowSizeItems.getNodes()[3].props.value).to.equal(100);
+      expect(rowSizeItems.get(0).props.value).to.equal(10);
+      expect(rowSizeItems.get(1).props.value).to.equal(30);
+      expect(rowSizeItems.get(2).props.value).to.equal(50);
+      expect(rowSizeItems.get(3).props.value).to.equal(100);
     });
     it('should render summary label', function() {
-      const summaryLabelWrapper = wrapper.find({style: styles.footerToolbarItem}).getNodes()[1];
+      const summaryLabelWrapper = wrapper.find({style: styles.footerToolbarItem}).get(1);
       expect(summaryLabelWrapper.props.children.props.children).to.equal('1 - 10 of 100');
     });
     it('should render pagination buttons', function() {
@@ -149,8 +151,8 @@ describe('<DataTables />', function() {
     });
     it('should render tooltips', function() {
       const headerColumns = wrapper.find(DataTablesHeaderColumn);
-      expect(headerColumns.getNodes()[0].props.tooltip).to.equal('Dessert (100g serving)');
-      expect(headerColumns.getNodes()[1].props.tooltip).to.equal('Calories');
+      expect(headerColumns.get(0).props.tooltip).to.equal('Dessert (100g serving)');
+      expect(headerColumns.get(1).props.tooltip).to.equal('Calories');
     });
     it('should call pagination handler', function() {
       wrapper.find(FlatButton).last().simulate('click');
@@ -363,9 +365,9 @@ describe('<DataTables />', function() {
 
     it('should have column class name', function() {
       const headerColumns = wrapper.find(DataTablesHeaderColumn);
-      expect(headerColumns.getNodes()[0].props.className).to.equal('important-column');
-      expect(headerColumns.getNodes()[1].props.className).to.equal('important-column');
-      expect(headerColumns.getNodes()[2].props.className).to.equal(undefined);
+      expect(headerColumns.get(0).props.className).to.equal('important-column');
+      expect(headerColumns.get(1).props.className).to.equal('important-column');
+      expect(headerColumns.get(2).props.className).to.equal(undefined);
     });
   });
 
@@ -399,12 +401,12 @@ describe('<DataTables />', function() {
 
     it('should render selected rows by default', function() {
       const tableRows = wrapper.find(DataTablesRow);
-      expect(tableRows.getNodes()[0].props.selected).to.equal(true);
-      expect(tableRows.getNodes()[1].props.selected).to.equal(false);
-      expect(tableRows.getNodes()[2].props.selected).to.equal(true);
-      expect(tableRows.getNodes()[3].props.selected).to.equal(false);
-      expect(tableRows.getNodes()[4].props.selected).to.equal(false);
-      expect(tableRows.getNodes()[5].props.selected).to.equal(true);
+      expect(tableRows.get(0).props.selected).to.equal(true);
+      expect(tableRows.get(1).props.selected).to.equal(false);
+      expect(tableRows.get(2).props.selected).to.equal(true);
+      expect(tableRows.get(3).props.selected).to.equal(false);
+      expect(tableRows.get(4).props.selected).to.equal(false);
+      expect(tableRows.get(5).props.selected).to.equal(true);
     });
   });
 });

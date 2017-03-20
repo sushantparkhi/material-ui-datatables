@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {Toolbar, ToolbarGroup, ToolbarTitle} from 'material-ui/lib/Toolbar';
-import IconButton from 'material-ui/lib/IconButton';
+import FlatButton from 'material-ui/lib/flat-button';
+import IconButton from 'material-ui/lib/icon-button';
 import ClearIcon from 'material-ui/lib/svg-icons/content/clear';
 import FilterListIcon from 'material-ui/lib/svg-icons/content/filter-list';
 import SearchIcon from 'material-ui/lib/svg-icons/action/search';

@@ -2,8 +2,9 @@ import React, {Component, PropTypes} from 'react';
 import {TableHeader, TableRow} from 'material-ui/lib/Table';
 import {Toolbar} from 'material-ui/lib/Toolbar';
 import DropDownMenu from 'material-ui/lib/DropDownMenu';
-import MenuItem from 'material-ui/lib/MenuItem';
-import FlatButton from 'material-ui/lib/FlatButton';
+import MenuItem from 'material-ui/lib/menus/menu-item';
+import FlatButton from 'material-ui/lib/flat-button';
+import IconButton from 'material-ui/lib/icon-button';
 import ChevronLeft from 'material-ui/lib/svg-icons/navigation/chevron-left';
 import ChevronRight from 'material-ui/lib/svg-icons/navigation/chevron-right';
 // customized components

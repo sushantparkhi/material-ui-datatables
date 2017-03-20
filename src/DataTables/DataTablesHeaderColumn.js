@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import {TableHeaderColumn} from 'material-ui/lib/Table';
-import Tooltip from 'material-ui/lib/internal/Tooltip';
+import Tooltip from 'material-ui/lib/Tooltip';
 import ArrowUpward from 'material-ui/lib/svg-icons/navigation/arrow-upward';
 import ArrowDownward from 'material-ui/lib/svg-icons/navigation/arrow-downward';
 

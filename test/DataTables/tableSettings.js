@@ -1,4 +1,4 @@
-import {deepOrange500} from 'material-ui/styles/colors';
+import {deepOrange500} from 'material-ui/lib/styles/colors';
 
 export const TABLE_COLUMNS = [
   {
