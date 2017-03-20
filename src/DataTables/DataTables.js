@@ -1,11 +1,11 @@
 import React, {Component, PropTypes} from 'react';
-import {TableHeader, TableRow} from 'material-ui/Table';
-import {Toolbar} from 'material-ui/Toolbar';
-import DropDownMenu from 'material-ui/DropDownMenu';
-import MenuItem from 'material-ui/MenuItem';
-import FlatButton from 'material-ui/FlatButton';
-import ChevronLeft from 'material-ui/svg-icons/navigation/chevron-left';
-import ChevronRight from 'material-ui/svg-icons/navigation/chevron-right';
+import {TableHeader, TableRow} from 'material-ui/lib/Table';
+import {Toolbar} from 'material-ui/lib/Toolbar';
+import DropDownMenu from 'material-ui/lib/DropDownMenu';
+import MenuItem from 'material-ui/lib/MenuItem';
+import FlatButton from 'material-ui/lib/FlatButton';
+import ChevronLeft from 'material-ui/lib/svg-icons/navigation/chevron-left';
+import ChevronRight from 'material-ui/lib/svg-icons/navigation/chevron-right';
 // customized components
 import DataTablesTable from './DataTablesTable';
 import DataTablesTableBody from './DataTablesTableBody';

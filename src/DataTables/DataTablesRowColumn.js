@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import {TableRowColumn} from 'material-ui/Table';
+import {TableRowColumn} from 'material-ui/lib/Table';
 
 function getStyles(props, context) {
   const {tableRowColumn} = context.muiTheme;

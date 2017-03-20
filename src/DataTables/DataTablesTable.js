@@ -1,5 +1,5 @@
 import React from 'react';
-import {Table} from 'material-ui/Table';
+import {Table} from 'material-ui/lib/Table';
 
 class DataTablesTable extends Table {
 

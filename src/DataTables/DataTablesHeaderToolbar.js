@@ -1,11 +1,11 @@
 import React, {Component, PropTypes} from 'react';
-import {Toolbar, ToolbarGroup, ToolbarTitle} from 'material-ui/Toolbar';
-import IconButton from 'material-ui/IconButton';
-import ClearIcon from 'material-ui/svg-icons/content/clear';
-import FilterListIcon from 'material-ui/svg-icons/content/filter-list';
-import SearchIcon from 'material-ui/svg-icons/action/search';
-import TextField from 'material-ui/TextField';
-import {blue500} from 'material-ui/styles/colors';
+import {Toolbar, ToolbarGroup, ToolbarTitle} from 'material-ui/lib/Toolbar';
+import IconButton from 'material-ui/lib/IconButton';
+import ClearIcon from 'material-ui/lib/svg-icons/content/clear';
+import FilterListIcon from 'material-ui/lib/svg-icons/content/filter-list';
+import SearchIcon from 'material-ui/lib/svg-icons/action/search';
+import TextField from 'material-ui/lib/TextField';
+import {blue500} from 'material-ui/lib/styles/colors';
 
 function getStyles(context) {
   const {

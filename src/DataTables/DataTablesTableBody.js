@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import {TableBody} from 'material-ui/Table';
+import {TableBody} from 'material-ui/lib/Table';
 
 class DataTablesTableBody extends TableBody {
   static muiName = 'TableBody';

@@ -1,8 +1,8 @@
 import React, {PropTypes} from 'react';
-import {TableHeaderColumn} from 'material-ui/Table';
-import Tooltip from 'material-ui/internal/Tooltip';
-import ArrowUpward from 'material-ui/svg-icons/navigation/arrow-upward';
-import ArrowDownward from 'material-ui/svg-icons/navigation/arrow-downward';
+import {TableHeaderColumn} from 'material-ui/lib/Table';
+import Tooltip from 'material-ui/lib/internal/Tooltip';
+import ArrowUpward from 'material-ui/lib/svg-icons/navigation/arrow-upward';
+import ArrowDownward from 'material-ui/lib/svg-icons/navigation/arrow-downward';
 
 function getStyles(props, context, state) {
   const {tableHeaderColumn} = context.muiTheme;
